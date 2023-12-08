@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Bank {
+	private String accountHolderName;
+    private double balance;
+
+    public Bank(String name, double initialBalance) {
+        accountHolderName = name;
+        balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposit successful. New balance: " + balance);
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawal successful. New balance: " + balance);
+        } else {
+            System.out.println("Insufficient funds!");
+        }
+    }
+
+    public void displayBalance() {
+        System.out.println("Account Holder: " + accountHolderName);
+        System.out.println("Current Balance: " + balance);
+    }
+}
